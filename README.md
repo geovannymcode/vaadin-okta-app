@@ -1,1 +1,1 @@
-# vaadin-okta-springboot
+# vaadin-okta-app
