@@ -1,0 +1,22 @@
+vaadin:
+  launch-browser: ${VAADIN_LAUNCH_BROWSER:true}
+spring:
+  application:
+    name: vaadin-okta-app
+  security:
+    oauth2:
+      client:
+        registration:
+          okta:
+            client-id: ${OKTA_CLIENT_ID}
+            client-secret: ${OKTA_CLIENT_SECRET}
+            scope: openid,profile,email
+        provider:
+          okta:
+            issuer-uri: ${OKTA_ISSUER_URI}
+server:
+  port: ${SERVER_PORT:8080}
+
+okta:
+  api:
+    token: ${OKTA_API_TOKEN}
