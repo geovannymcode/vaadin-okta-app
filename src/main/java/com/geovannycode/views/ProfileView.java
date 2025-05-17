@@ -37,7 +37,7 @@ public class ProfileView extends VerticalLayout {
 
             add(title, email, logoutButton);
         } else {
-            H1 title = new H1("No has iniciado sesión");
+            H1 title = new H1("No se ha iniciado sesión");
             Button loginButton = new Button("Ir a login", e -> {
                 getUI().ifPresent(ui -> ui.navigate("login"));
             });
