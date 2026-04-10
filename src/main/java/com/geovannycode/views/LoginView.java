@@ -21,7 +21,7 @@ public class LoginView extends VerticalLayout {
         setJustifyContentMode(JustifyContentMode.CENTER);
 
         H1 title = new H1("Bienvenido a la aplicación");
-        Anchor loginLink = new Anchor("oauth2/authorization/okta", "Iniciar sesión con Okta");
+        Anchor loginLink = new Anchor("oauth2/authorization/auth0", "Iniciar sesión con Auth0");
         loginLink.getElement().setAttribute("router-ignore", true);
         loginLink.getStyle().set("margin-top", "20px");
 

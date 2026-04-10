@@ -1,7 +1,7 @@
 package com.geovannycode.views;
 
 import com.geovannycode.model.User;
-import com.geovannycode.service.OktaUserService;
+import com.geovannycode.service.Auth0UserService;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
@@ -22,7 +22,7 @@ import com.vaadin.flow.router.Route;
 @PageTitle("Registro de Usuario")
 public class RegisterView extends VerticalLayout {
 
-    public RegisterView(OktaUserService oktaUserService) {
+    public RegisterView(Auth0UserService auth0UserService) {
         // Configuración del layout principal
         setSizeFull();
         setAlignItems(Alignment.CENTER);
@@ -93,7 +93,7 @@ public class RegisterView extends VerticalLayout {
         registerButton.addClickListener(event -> {
             if (validateForm(firstName, lastName, email, password)) {
                 User user = new User(firstName.getValue(), lastName.getValue(), email.getValue(), password.getValue());
-                if (oktaUserService.registerUser(user)) {
+                if (auth0UserService.registerUser(user)) {
                     Notification notification = Notification.show(
                             "Usuario registrado con éxito. Ahora puedes iniciar sesión.",
                             5000,
